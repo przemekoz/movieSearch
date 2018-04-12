@@ -1,0 +1,34 @@
+{
+  "name": "movie-search",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tests": "karma start karma.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/przemekoz/movieSearch.git"
+  },
+  "author": "Przemyslaw Kozinski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/przemekoz/movieSearch/issues"
+  },
+  "homepage": "https://github.com/przemekoz/movieSearch#readme",
+  "dependencies": {
+    "http-server": "^0.11.1",
+    "jasmine": "^3.1.0",
+    "jquery": "^3.3.1",
+    "jquery-ui": "^1.12.1"
+  },
+  "devDependencies": {
+    "babel-loader": "^7.1.4",
+    "jasmine-core": "^3.1.0",
+    "karma": "^2.0.0",
+    "karma-jasmine": "^1.1.1",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-webpack": "^3.0.0",
+    "webpack": "^4.5.0"
+  }
+}
