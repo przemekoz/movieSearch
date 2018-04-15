@@ -1,6 +1,6 @@
 'use strict';
 
-import MovieService from './movie.service';
+import { MovieService } from './movie.service.js';
 
 describe('MovieService', () => {
 

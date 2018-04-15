@@ -1,6 +1,6 @@
 'use strict';
 
-import MovieSearchComponent from './MovieSearch.component';
+import { MovieSearchComponent } from './MovieSearch.component.js';
 
 describe('MovieSearchComponent', () => {
 

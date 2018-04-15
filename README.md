@@ -1,11 +1,4 @@
-Run server:
-node ./node_modules/http-server/bin/http-server -p 4200
-
-Run test
-npm run tests
-
 # Movie Search
-
 
 ## Development server
 

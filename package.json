@@ -19,8 +19,9 @@
   "dependencies": {
     "http-server": "^0.11.1",
     "jasmine": "^3.1.0",
-    "jquery": "^3.3.1",
-    "jquery-ui": "^1.12.1"
+    //"jquery": "^3.3.1",
+    //"jquery-ui": "^1.12.1",
+    //"lodash.debounce": "^4.0.8"
   },
   "devDependencies": {
     "babel-loader": "^7.1.4",
