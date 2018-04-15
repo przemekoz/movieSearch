@@ -8,9 +8,7 @@ export class MovieSearchComponent {
         const id = fieldSearchId;
         const movieService = new MovieService();
         const field = $('#' + id);
-        const debouncedSearch = _.debounce(phrase => {
-            console.log(phrase)
-        }, 200);
+        let notSearchInit = true;
 
         movieService.getTrends()
             .then(function (response) {
@@ -29,8 +27,29 @@ export class MovieSearchComponent {
 
         field.on('keyup', (event) => {
             let phrase = event.target.value;
-            if (phrase) {
-                debouncedSearch(phrase);
+            if (phrase && notSearchInit) {
+                notSearchInit = false;
+                field.autocomplete('option', 'source', (request, response) => {
+                    $.getJSON(movieService.getSuggestionsSource() + request.term, {}, response);
+                })
+                field.autocomplete('instance')._renderMenu = function (ul, items) {
+                    let that = this;
+                    items.forEach(item => {
+                        _.forEach(item, innerItem => {
+                            if (innerItem) {
+                                that._renderItemData(ul, innerItem);
+                            }
+                        });
+                    });
+                };
+
+                field.autocomplete('instance')._renderItem = (ul, item) => {
+                    console.log(item)
+                    return $('<li>')
+                        .append('<div>' + item.title + '<br>' + item.release_date + '</div>')
+                        .appendTo(ul);
+                };
+                field.autocomplete('option', 'delay', 200);
             }
         });
     }
